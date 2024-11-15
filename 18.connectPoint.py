@@ -2,6 +2,7 @@
 import cv2
 import numpy
 
+#black picture
 img = numpy.zeros([500,500,3])
 
 points = []

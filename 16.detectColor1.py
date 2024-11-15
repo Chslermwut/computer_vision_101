@@ -1,7 +1,7 @@
 #detect color
 import cv2
 
-img = cv2.imread('images/color.png')
+img = cv2.imread('images/candy.jpg')
 
 def clickPosition(event,x,y,flags,param):
   if event == cv2.EVENT_LBUTTONDOWN:
