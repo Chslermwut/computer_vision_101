@@ -1,0 +1,32 @@
+Thresholding
+ทำงานบน grayScale และ Binary
+
+grayScale ปรับระดับความสว่างได้ 256 แบบ
+ํํํ* 0(ดำ) - 255(ขาว)
+
+ิิBinary มี 2 ระดับ
+* แทนค่าด้วย 0(ดำ), 1(ขาว) หรือบางที่ใช้ 0 , 255
+
+Thresholding จะประมวลผลใน Binary
+แต่วิธีส่วนใหญ่ grayScale
+*** Color --> grayScale --> Binary
+
+Why
+มีการเก็บข้อมูล 2 ส่วน ประกอบด้วย Foreground(จุดสนใจ) และ Background(พื้นหลัง)
+
+Thresholding พิจารณาจากเปรียบเทียบค่าสีดำและสีขาว(จุดแบ่ง)
+ค่ากลาง 128 โดยค่านี้จะมีผลนี้ถ้าไม่มี noise
+
+**cv2.threshold(1,2,3,4)
+1. ภาพ grayScale
+2. ค่าเกณฑ์หริอจุดแบ่งในการจำแนก Pixel
+3. maxValue ค่าสูงสุด
+4. รูปแบบการแบ่งประเภท
+
+4.ชื่อรูปแบบการแบ่งประเภท   **threshold == ค่าจุดแบ่ง**
+cv2.THRESH_BINARY      ถ้าค่าสูงกว่า threshold จะเปลี่ยนเป็นขาว 255
+cv2.THRESH_BINARY_INV  ถ้าค่าสูงกว่า threshold จะเปลี่ยนเป็นดำ 0
+cv2.THRESH_TRUNC       ถ้าค่าสูงกว่า threshold จะเปลี่ยนที่ตรงนั้นเป็น threshold
+cv2.THRESH_TOZERO      ถ้าค่าต่ำกว่า threshold จะเปลี่บนเป็นดำ
+cv2.THRESH_TOZERO_INV  ถ้าค่าสูงกว่า threshold จะเปลี่บนเป็นดำ
+
