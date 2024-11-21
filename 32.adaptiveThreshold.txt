@@ -1,0 +1,15 @@
+#ใช้กับภาพที่มีความสว่างๆไม่เท่ากันในภาพ
+
+cv2.adaptiveThreshold(1,2,3,4,5,6)
+
+1. ภาพ gray scale
+2. max Value
+3. AdativeMethod รูปแบบการปรับค่าจุดแบ่ง
+4. ThresholdType รูปแบบการพิจารณาจุดเปลี่ยน
+5. BlockSize (ขนาด Block) พื้นที่สำหรับพิจารณาค่าเหมาะสม
+6. ค่า C
+
+AdativeMethod
+
+cv2.ADAPTIVE_THRESHOLD_MEAN_C      =   คำนวนค่าเฉลี่ยนรอบๆ BlockSize แล้วหักจากค่า C
+cv2.ADAPTIVE_THRESHOLD_GAUSSAIAN_C   = คำนวนค่าเฉลี่ยนรอบๆ BlockSize แล้วอ้างอิงการทำงาน guussian function กับค่า C
