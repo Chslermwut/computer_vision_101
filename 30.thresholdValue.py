@@ -10,6 +10,13 @@ plt.subplot(231,xticks=[],yticks=[])
 plt.title("Original")
 plt.imshow(gray_img,cmap="gray")
 
+for i in range(len(thres_value)):
+  thresh ,result = cv2.threshold(gray_img,thres_value[i],255,cv2.THRESH_BINARY)
+  plt.subplot(232+i)
+  plt.title("%d"%thres_value[i])
+  plt.imshow(result,cmap="gray")
+  plt.xticks([]),plt.yticks([])
+
 plt.show()
 
 
